@@ -1,0 +1,24 @@
+<%- include('header') %>
+<main>
+    <h2>Albums</h2>
+    <ul>
+        <% albums.forEach(album => { %>
+            <li>
+                <h3><%= album.title %></h3>
+                <p><%= album.description %></p>
+                <p>Date: <%= album.date.toDateString() %></p>
+                <ul>
+                    <% album.photos.forEach(photo => { %>
+                        <li><img src="<%= photo.photoPath %>" alt="<%= photo.title %>"></li>
+                    <% }) %>
+                </ul>
+                <a href="/albums/edit/<%= album._id %>">Modifier</a>
+                <form action="/albums/delete/<%= album._id %>" method="POST">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Administration</title>
+  <!-- Inclusion de Bootstrap via CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Votre CSS personnalisé ici */
+    body {
+      padding: 20px;
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Administration</h1>
+    </div>
+    <div class="nouvelle-entite">
+      <h2>Créer une nouvelle entité</h2>
+      <form action="/admin/creer" method="POST" class="form-group">
+        <input type="text" name="nom" placeholder="Nom" required class="form-control mb-2">
+        <!-- Ajoutez d'autres champs ici selon vos besoins -->
+        <button type="submit" class="btn btn-primary">Créer</button>
+      </form>
+    </div>
+
+    <div class="liste-entites">
+      <h2>Liste des entités</h2>
+      <ul class="list-group">
+        <% entites.forEach(function(entite) { %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= entite.firstname %> 
+            <div>
+              <!-- Bouton ou lien pour modifier -->
+              <a href="/admin/modifier/<%= entite.id %>" class="btn btn-secondary btn-sm">Modifier</a>
+              <!-- Bouton ou lien pour supprimer -->
+              <form action="/admin/supprimer/<%= entite.id %>" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+              </form>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

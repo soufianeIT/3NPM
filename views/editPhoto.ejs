@@ -1,0 +1,18 @@
+<%- include('header') %>
+<main>
+    <h2>Modifier la Photo</h2>
+    <form action="/photos/edit/<%= photo._id %>" method="POST">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" value="<%= photo.title %>" required>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required><%= photo.description %></textarea>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="<%= photo.date.toISOString().split('T')[0] %>" required>
+        
+        <button type="submit">Modifier</button>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%- include('header') %>
+<main>
+    <h2>Ajouter une Photo</h2>
+    <form action="/photos/add" method="POST" enctype="multipart/form-data">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" required>
+        
+        <button type="submit">Ajouter</button>
+    </form>
+</main>
+</body>
+</html>

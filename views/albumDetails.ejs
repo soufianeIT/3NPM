@@ -1,0 +1,55 @@
+<%- include('header') %>
+<main>
+    <h2><%= album.title %></h2>
+    <p><%= album.description %></p>
+    <p>Date: <%= album.date.toDateString() %></p>
+    <form action="/albums/delete/<%= album._id %>" method="POST" style="display: inline;">
+        <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet album et toutes ses photos ?');">Supprimer l'album</button>
+    </form>
+    <ul>
+        <% album.photos.forEach(photo => { %>
+            <li>
+                <img src="<%= photo.photoPath %>" alt="<%= photo.title %>">
+                <p><%= photo.title %></p>
+                <p><%= photo.description %></p>
+                <p>Date: <%= photo.date.toDateString() %></p>
+                <form action="/albums/<%= album._id %>/delete-photo/<%= photo._id %>" method="POST" style="display: inline;">
+                    <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette photo ?');">Supprimer</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+
+    <button id="addPhotoBtn">Ajouter une Photo</button>
+    <div id="addPhotoForm" style="display: none;">
+        <h3>Ajouter une Photo</h3>
+        <form action="/albums/<%= album._id %>/add-photo" method="POST" enctype="multipart/form-data">
+            <label for="title">Titre:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" required>
+            
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('addPhotoBtn').addEventListener('click', function() {
+            var form = document.getElementById('addPhotoForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        });
+    </script>
+</main>
+</body>
+</html>

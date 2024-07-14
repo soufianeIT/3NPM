@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Photothèque</title>
+</head>
+<body>
+    <%- include('header') %>
+    <main>
+        <h2>Albums</h2>
+        <ul>
+            <% albums.forEach(album => { %>
+                <li>
+                    <h3><a href="/albums/<%= album._id %>"><%= album.title %></a></h3>
+                    <p><%= album.description %></p>
+                    <p>Date: <%= album.date.toDateString() %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+</body>
+</html>

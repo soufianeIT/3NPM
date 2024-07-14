@@ -1,0 +1,19 @@
+<%- include('header') %>
+<main>
+    <h2>Photos</h2>
+    <ul>
+        <% photos.forEach(photo => { %>
+            <li>
+                <img src="<%= photo.photoPath %>" alt="<%= photo.title %>">
+                <h3><%= photo.title %></h3>
+                <p><%= photo.description %></p>
+                <a href="/photos/edit/<%= photo._id %>">Modifier</a>
+                <form action="/photos/delete/<%= photo._id %>" method="POST">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</main>
+</body>
+</html>

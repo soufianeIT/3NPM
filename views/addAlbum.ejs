@@ -1,0 +1,21 @@
+<%- include('header') %>
+<main>
+    <h2>Ajouter un Album</h2>
+    <form action="/albums/add" method="POST" enctype="multipart/form-data">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <!-- <label for="photos">Photos:</label>
+        <input type="file" id="photos" name="photos" multiple required>
+         -->
+        <button type="submit">Ajouter</button>
+    </form>
+</main>
+</body>
+</html>
