@@ -20,6 +20,13 @@ export const dbUrl = 'mongodb://127.0.0.1:27017/phototheque';
 1. Lancez le serveur :
 npm start
 
+## contributeurs
+BOUTAGUMANT SOUFIANE 
+KENGNE KEVIN 
+DOUIMI IBRAHIM 
+MAMBOU JOREL 
+
+
 ## License
 
 Ce fichier `README.md` fournit une vue d'ensemble claire et complète de votre projet, y compris les instructions d'installation, les fonctionnalités, les étapes de développement, et un guide utilisateur pour faciliter l'utilisation et la contribution.
