@@ -9,12 +9,12 @@ Photothèque est une application web permettant de créer, visualiser et gérer 
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/phototheque.git
-   cd phototheque
+   git clone https://github.com/soufianeit/3NPM.git
+   cd 3NPM
 
 
 npm install
-export const dbUrl = 'mongodb://localhost:27017/phototheque';
+export const dbUrl = 'mongodb://127.0.0.1:27017/phototheque';
 
 ## Utilisation
 1. Lancez le serveur :
