@@ -22,9 +22,6 @@ npm start
 
 ## contributeurs
 BOUTAGUMANT SOUFIANE 
-KENGNE KEVIN 
-DOUIMI IBRAHIM 
-MAMBOU JOREL 
 
 
 ## License
